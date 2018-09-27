@@ -2,26 +2,28 @@
 <odoo>
     <data>
 
-        <template id="inherit_web_menu_template" name="Toggle Developer Mode" inherit_id="web.menu">
-            <xpath expr="//ul[contains(@class, 'oe_systray')]" position="inside">
+        <template id="inherit_web_menu_template" name="Toggle Developer Mode" inherit_id="web.webclient_bootstrap" priority="20">
+            <xpath expr="//div[@class='o_main']/preceding::div[1]" position="inside">
 
                 <script type="text/javascript">
                     var qs = $.deparam.querystring();
                     var res = $.param(qs);
                 </script>
 
-                <li>
-                    <a t-if="request.env.user.id==1" href="#" title="Enable/disable Developer Mode" class="toggleDeveloperMode">
-                        <script type="text/javascript">
-                            if (res.indexOf('debug') >=0) {
-                                document.write('<span class="fa fa-minus"/>');
-                            } else {
-                                document.write('<span class="fa fa-plus"/>');
-                            }
-                        </script>
-                        <span class="fa fa-bug"/>
-                    </a>
-                </li>
+                <ul class="nav navbar-nav navbar-right navbar-systray-item">
+                    <li>
+                        <a t-if="request.env.user.id==1" href="#" title="Enable/disable Developer Mode" class="toggleDeveloperMode">
+                            <script type="text/javascript">
+                                if (res.indexOf('debug') >=0) {
+                                    document.write('<span class="fa fa-minus"/>');
+                                } else {
+                                    document.write('<span class="fa fa-plus"/>');
+                                }
+                            </script>
+                            <span class="fa fa-bug"/>
+                        </a>
+                    </li>
+                </ul>
 
                 <script type="text/javascript">
                     $('.toggleDeveloperMode').click(function() {
