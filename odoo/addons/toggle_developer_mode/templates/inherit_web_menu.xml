@@ -3,7 +3,7 @@
     <data>
 
         <template id="inherit_web_menu_template" name="Toggle Developer Mode" inherit_id="web.webclient_bootstrap" priority="20">
-            <xpath expr="//div[@class='o_main']/preceding::div[1]" position="inside">
+            <xpath expr="//div[hasclass('o_main')]/preceding::div[1]" position="inside">
 
                 <script type="text/javascript">
                     var qs = $.deparam.querystring();
