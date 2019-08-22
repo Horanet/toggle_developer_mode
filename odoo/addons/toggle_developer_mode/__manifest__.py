@@ -3,7 +3,7 @@
 {
     'name': 'Toggle Developer Mode',
     'category': 'Extra Tools',
-    'version': '11.0.1.0.1',
+    'version': '11.0.1.0.2',
     'summary':
         "To enable / disable developer mode from admin's main menu in Odoo",
     'description': 'no_warning',
