@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+    <t t-name="ToggleDeveloperMode">
+        <li title="Enable/disable Developer Mode">
+            <a role="button" href="#" id="toggle_developer_mode">
+                <i class="fa fa-bug"/>
+            </a>
+        </li>
+    </t>
+
+</templates>
+
